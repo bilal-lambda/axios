@@ -737,7 +737,7 @@ describe('supports http with nodejs', function () {
     });
   });
 
-  it('should combine baseURL and url', function (done) {
+  it('should combine baseURL and url and here we go', function (done) {
     server = http.createServer(function (req, res) {
       res.end();
     }).listen(4444, function () {
