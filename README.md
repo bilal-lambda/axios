@@ -94,7 +94,7 @@ axios.get('/user?ID=12345')
 // Optionally the request above could also be done as
 axios.get('/user', {
     params: {
-      ID: 12345
+      ID: 123456
     }
   })
   .then(function (response) {
@@ -163,7 +163,7 @@ Requests can be made by passing the relevant config to `axios`.
 // Send a POST request
 axios({
   method: 'post',
-  url: '/user/12345',
+  url: '/user/123456',
   data: {
     firstName: 'Fred',
     lastName: 'Flintstone'
