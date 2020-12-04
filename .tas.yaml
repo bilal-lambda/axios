@@ -1,0 +1,27 @@
+---
+blacklist:
+  - "<location>#<suit-name>#<test-name>"
+  - "<location>#<suit-name>#<test-name>"
+  - "src/test/api.js"
+docker:
+  auth:
+    password: $DOCKERHUB_PASSWORD
+    username: mydockerhub-user
+  image: "lambdatest/<language>:<version TAG>"
+modifiers:
+  - type: mocha
+    config: cnf/mocha.ini
+  - type: jest
+    cli: "--forbid-pending --no-bail"
+postmerge:
+  pattern:
+    - "**/*.integration.js"
+    - e2e/**/*.test.js
+  strategy:
+    threshold: <5|100s|30m|6h>
+    type: <commit|time>
+premerge:
+  - "test/unit/adapters/http.js"
+stability:
+  consecutive_runs: 5
+version: 2.0
