@@ -15,13 +15,13 @@ modifiers:
     cli: "--forbid-pending --no-bail"
 postmerge:
   pattern:
-    - "test/unit/adapters/http.js"
+    - "test/unit/adapters/**/*.js"
     - "test/unit/adapters/http-2.js"
   strategy:
     threshold: <5|100s|30m|6h>
     type: <commit|time>
 premerge:
-  - "test/unit/adapters/http.js"
+  - "test/unit/adapters/**/*.js"
   - "test/unit/adapters/http-2.js"
 stability:
   consecutive_runs: 5
