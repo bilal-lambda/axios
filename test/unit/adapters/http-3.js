@@ -114,6 +114,28 @@ describe('oh wow', function () {
     });
   });
 
+    it('should redirect also', function (done) {
+    var str = 'test response';
+
+    server = http.createServer(function (req, res) {
+      var parsed = url.parse(req.url);
+
+      if (parsed.pathname === '/one') {
+        res.setHeader('Location', '/two');
+        res.statusCode = 302;
+        res.end();
+      } else {
+        res.end(str);
+      }
+    }).listen(4444, function () {
+      axios.get('http://localhost:4444/one').then(function (res) {
+        assert.equal(res.data, str);
+        assert.equal(res.request.path, '/two');
+        done();
+      });
+    });
+  });
+  
   it('should not redirect', function (done) {
     server = http.createServer(function (req, res) {
       res.setHeader('Location', '/foo');
