@@ -56,7 +56,25 @@ describe('oh wow', function () {
     });
   });
 
-  it('should allow passing JSON', function (done) {
+  it('should allow passing NEW JSON', function (done) {
+    var data = {
+      firstName: 'Fred',
+      lastName: 'Flintstone',
+      emailAddr: 'fred@example.com'
+    };
+
+    server = http.createServer(function (req, res) {
+      res.setHeader('Content-Type', 'application/json;charset=utf-8');
+      res.end(JSON.stringify(data));
+    }).listen(4444, function () {
+      axios.get('http://localhost:4444/').then(function (res) {
+        assert.deepEqual(res.data, data);
+        done();
+      });
+    });
+  });
+  
+    it('should allow passing JSON', function (done) {
     var data = {
       firstName: 'Fred',
       lastName: 'Flintstone',
