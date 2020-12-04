@@ -8,7 +8,7 @@ var fs = require('fs');
 var path = require('path');
 var server, proxy;
 
-describe('Dummy test suite', function () {
+describe('New Dummy test suite', function () {
 
   afterEach(function () {
     if (server) {
@@ -32,7 +32,7 @@ describe('Dummy test suite', function () {
     server = http.createServer(function (req, res) {
       setTimeout(function () {
         res.end();
-      }, 1000);
+      }, 3000);
     }).listen(4444, function () {
       var success = false, failure = false;
       var error;
