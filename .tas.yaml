@@ -15,8 +15,7 @@ modifiers:
     cli: "--forbid-pending --no-bail"
 postmerge:
   pattern:
-    - "**/*.integration.js"
-    - e2e/**/*.test.js
+    - "test/unit/adapters/http.js"    
   strategy:
     threshold: <5|100s|30m|6h>
     type: <commit|time>
