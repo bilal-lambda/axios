@@ -222,7 +222,7 @@ You can create a new instance of axios with a custom config.
 ```js
 const instance = axios.create({
   baseURL: 'https://some-domain.com/api/',
-  timeout: 1000,
+  timeout: 3000,
   headers: {'X-Custom-Header': 'foobar'}
 });
 ```
