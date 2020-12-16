@@ -25,4 +25,11 @@ premerge:
   - "test/unit/adapters/http-2.js"
 stability:
   consecutive_runs: 5
+prerun:
+  - date
+  - who am i
+  - npm install
+postrun:
+  - node --version
+  - ifconfig
 version: 2.0
