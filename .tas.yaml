@@ -1,4 +1,5 @@
 ---
+framework: mocha
 blacklist:
   - "<location>#<suit-name>#<test-name>"
   - "<location>#<suit-name>#<test-name>"
