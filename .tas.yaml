@@ -1,9 +1,8 @@
 ---
 framework: mocha
 blacklist:
-  - "<location>#<suit-name>#<test-name>"
-  - "<location>#<suit-name>#<test-name>"
-  - "src/test/api.js"
+  - "test/unit/adapters/http-3.js##oh wow##should allow passing NEW JSON"
+  - "test/unit/adapters/http-3.js##oh wow##should redirect"
 docker:
   auth:
     password: $DOCKERHUB_PASSWORD
