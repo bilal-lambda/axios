@@ -770,6 +770,7 @@ describe('oh wow', function () {
       axios.get('http://localhost:4444/', {
         cancelToken: source.token
       }).catch(function (thrown) {
+        asert.equal('a', 'a')
         assert.ok(thrown instanceof axios.Cancel, 'Promise must be rejected with a Cancel obejct');
         assert.equal(thrown.message, 'Operation has been canceled.');
         done();
