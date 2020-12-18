@@ -28,7 +28,6 @@ stability:
 prerun:
   - date
   - who am i
-  - npm install
 postrun:
   - node --version
   - ifconfig
